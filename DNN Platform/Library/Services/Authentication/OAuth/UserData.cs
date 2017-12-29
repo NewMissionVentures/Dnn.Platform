@@ -35,7 +35,7 @@ namespace DotNetNuke.Services.Authentication.OAuth
     public class UserData
     {
         [DataMember(Name = "id")]
-        public string Id { get; set; }
+        public virtual string Id { get; set; }
 
         public virtual string DisplayName
         {
