@@ -46,8 +46,9 @@
     <LangVersion>default</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <OutputPath>bin\</OutputPath>
-    <DocumentationFile>bin\DotNetNuke.XML</DocumentationFile>
+    <OutputPath>..\..\..\..\..\..\..\inetpub\wwwroot\secondstep.org\bin\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
     <DefineTrace>true</DefineTrace>
     <DebugSymbols>true</DebugSymbols>
     <WarningLevel>4</WarningLevel>

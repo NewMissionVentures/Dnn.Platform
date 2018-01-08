@@ -145,6 +145,7 @@ namespace DotNetNuke.Services.Authentication.OAuth
         protected string AuthTokenName { get; set; }        
         protected string Scope { get; set; }
 		protected string AccessToken { get; set; }
+        public string IdentityToken { get; protected set; }
         protected string VerificationCode
         {
             get { return HttpContext.Current.Request.Params[OAuthCodeKey]; }
@@ -278,6 +279,7 @@ namespace DotNetNuke.Services.Authentication.OAuth
 
             string responseText = ExecuteWebRequest(TokenMethod, TokenEndpoint, parameters.ToNormalizedString(), String.Empty);
 
+            IdentityToken = GetIdentityToken(responseText);
             AuthToken = GetToken(responseText);
             AuthTokenExpiry = GetExpiry(responseText);
         }
@@ -599,6 +601,11 @@ namespace DotNetNuke.Services.Authentication.OAuth
         protected virtual string GetToken(string responseText)
         {
             return responseText;
+        }
+
+        protected virtual string GetIdentityToken(string responseText)
+        {
+            return string.Empty;
         }
 
         protected void LoadTokenCookie(string suffix)
