@@ -788,7 +788,7 @@ namespace DotNetNuke.Services.Authentication.OAuth
             return (OAuthVersion == "1.0") ? (OAuthVerifier != null) : (VerificationCode != null);
         }
 
-        public bool IsCurrentService()
+        public virtual bool IsCurrentService()
         {
             string service = HttpContext.Current.Request.Params["state"];
             return !String.IsNullOrEmpty(service) && service == Service;
